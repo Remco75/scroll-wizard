@@ -1,0 +1,28 @@
+
+<app-scroll-wizard>
+	<app-my-fancy-component *appScrollWizardStep="let ctrl=stepCtrl" 
+    (done)="ctrl.goNext()"
+    (startOver)="ctrl.resetFromHere()"
+    name="step1">
+  </app-my-fancy-component>
+
+	<app-my-fancy-component *appScrollWizardStep="let ctrl=stepCtrl" 
+    (done)="ctrl.goNext()" 
+    (startOver)="ctrl.resetFromHere()"
+    name="step2">
+  </app-my-fancy-component>
+
+	<app-my-fancy-component *appScrollWizardStep="let ctrl=stepCtrl" 
+    (done)="ctrl.goNext()" 
+    (startOver)="ctrl.resetFromHere()"
+    name="step3">
+  </app-my-fancy-component>
+
+  <app-my-fancy-component *appScrollWizardStep="let ctrl=stepCtrl" 
+    (done)="ctrl.goNext()"
+    (startOver)="ctrl.resetFromHere()" 
+    name="step4">
+  </app-my-fancy-component>
+
+  <hello *appScrollWizardStep name="step5"></hello>
+</app-scroll-wizard>

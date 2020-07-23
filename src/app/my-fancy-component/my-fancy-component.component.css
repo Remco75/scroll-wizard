@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  border: 1px solid green;
+  height: 80vh;
+  width: 100%;
+  color: red;
+}
+
