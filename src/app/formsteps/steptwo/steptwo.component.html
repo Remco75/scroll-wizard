@@ -3,4 +3,6 @@
 <form [formGroup]="stepform">
 	<input type="text" formControlName="reason" placeholder="iets">
   <button (click)="onReasonDone()">ik wil graag verder</button>
+  <br>
+  <button (click)="somethingChangedSoResetLaterSteps.emit();">deze knop reset m vanaf stap 4! fancy als je iets veranderd dat alleen op latere stappen effect heeft</button>
   </form>

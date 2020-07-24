@@ -1,11 +1,13 @@
 
 <app-scroll-wizard>
-  <hello *appScrollWizardStep="let ctrl=stepCtrl" (autoAdvance)="ctrl.goNext()" name="Intro step"></hello>
+  <hello *appScrollWizardStep="let ctrl=stepCtrl" (autoAdvance)="ctrl.goNext()" name="Intro step" class="step"></hello>
 	
   <app-stepone *appScrollWizardStep="let ctrl=stepCtrl; let i=index" 
-  (genderSelected)="ctrl.resetFromHere((i+1));"></app-stepone>
+  (genderSelected)="ctrl.resetFromHere((i+1));" class="step"></app-stepone>
   
-  <app-steptwo *appScrollWizardStep="let ctrl=stepCtrl" (done)="ctrl.goNext()"> </app-steptwo>
+  <app-steptwo *appScrollWizardStep="let ctrl=stepCtrl" (done)="ctrl.goNext()" 
+    (somethingChangedSoResetLaterSteps)="ctrl.resetFromHere(4)"
+  class="step"> </app-steptwo>
 
 	<app-my-fancy-component *appScrollWizardStep="let ctrl=stepCtrl" 
     (done)="ctrl.goNext()" 
