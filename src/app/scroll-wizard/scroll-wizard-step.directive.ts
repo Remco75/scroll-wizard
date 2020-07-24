@@ -13,28 +13,26 @@ export class ScrollWizardStepDirective implements OnInit {
   constructor(private wizardService: WizardService, private templateRef: TemplateRef<any>,private viewContainer: ViewContainerRef) {}
 
   onNavigationStreamChange(navEvent) {
-    // this is the API for our steps. Methods on this context can be called from the implementing template
+    // this is the API for our steps. Methods / properties on this context can be called from the implementing template
     const context = {
       stepCtrl: {
-        resetFromHere: () => this.wizardService.resetFromStep(this.stepIndex),
+        resetFromHere: (stepIndex = this.stepIndex) => this.wizardService.resetFromStep(stepIndex),
         goNext: () => this.wizardService.gotoNextStep()
-      }
+      },
+      index: this.stepIndex
     };
 
-
     if (this.active) {
-      if (!this.hasView) {
         this.stepViewRef = this.viewContainer.createEmbeddedView(this.templateRef, context);
         this.hasView = true;
-      } else {
         this.viewContainer.insert(this.stepViewRef);
-      }
     }
   }
 
   onRemove(removeAboveIndex: number) {
-    if (this.stepIndex > removeAboveIndex) {
-      this.viewContainer.detach();
+    if (this.hasView && this.stepIndex >= removeAboveIndex) {
+      this.hasView = false;
+      this.viewContainer.clear();
     }
   }
 

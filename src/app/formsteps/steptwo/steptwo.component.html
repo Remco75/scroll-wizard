@@ -1,3 +1,6 @@
-<p>
-steptwo works!
-</p>
+<h1>Waarom?</h1>
+
+<form [formGroup]="stepform">
+	<input type="text" formControlName="reason" placeholder="iets">
+  <button (click)="onReasonDone()">ik wil graag verder</button>
+  </form>

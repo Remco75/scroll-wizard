@@ -1,3 +1,7 @@
 p {
   font-family: Lato;
 }
+
+[appScrollWizardStep] {
+  margin-top: 10px;
+}

@@ -1,3 +1,13 @@
-<p>
-stepone works!
-</p>
+<h1>Stap 1: ik voel me: </h1>
+<p>Bij selectie ga je automaitsch verder. als je hiernaartoe terug gaat worden later ingevulde waardes en stappen weer verwijderd</p>
+
+<form [formGroup]="stepform">
+   <label>
+     <input type="radio" value="Male" formControlName="gender">
+       <span>male</span>
+   </label>
+   <label>
+     <input type="radio" value="Female" formControlName="gender">
+       <span>female</span>
+   </label>
+</form>

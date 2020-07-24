@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {ScrollWizardComponent} from './scroll-wizard/scroll-wizard.component';
@@ -12,7 +12,7 @@ import { SteptwoComponent } from './formsteps/steptwo/steptwo.component';
 import { HelloComponent } from './formsteps/hello/hello.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, CommonModule ],
+  imports:      [ BrowserModule, FormsModule, CommonModule, ReactiveFormsModule ],
   declarations: [ AppComponent,ScrollWizardStepDirective,  HelloComponent, ScrollWizardComponent, MyFancyComponentComponent, SteponeComponent, SteptwoComponent ],
   bootstrap:    [ AppComponent ],
   exports: [ AppComponent, ScrollWizardStepDirective, HelloComponent, ScrollWizardComponent ],
