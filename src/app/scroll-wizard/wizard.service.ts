@@ -19,7 +19,6 @@ export class WizardService {
 
   initWizard(stepCount, steps: ScrollWizardStepDirective[]) {
     this.steps = steps;
-    // set indexes to steps:
     this.steps.forEach((step, index) => step.stepIndex = index)
     this.stepCount = stepCount;
     setTimeout(() => this.navigate(this.activeIndex));
@@ -34,11 +33,12 @@ export class WizardService {
   }
 
  
-  resetFromStep(stepIndex: number) {
+  resetFromStep(stepIndex: number, navigateToStep = true) {
     this.removeStepsSubject.next(stepIndex);
-    this.activeIndex = stepIndex;
-    this.navigate(stepIndex);
-   
+    if(navigateToStep) {
+      this.activeIndex = stepIndex;
+      this.navigate(stepIndex);
+    } 
   }
 
   private navigate(newIndex) {

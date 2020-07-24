@@ -22,7 +22,7 @@ export class ScrollWizardStepDirective implements OnInit {
       // this is the API for our steps. Methods / properties on this context can be called from the implementing template
       const context = {
         stepCtrl: {
-          resetFromHere: (stepIndex = this.stepIndex) => this.wizardService.resetFromStep(stepIndex),
+          resetFromHere: (stepIndex = this.stepIndex, navigate=true) => this.wizardService.resetFromStep(stepIndex, navigate),
           goNext: () => this.wizardService.gotoNextStep()
         },
         index: this.stepIndex
