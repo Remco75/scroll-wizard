@@ -1,17 +1,20 @@
-import { Directive, Input, ViewRef, TemplateRef, ViewContainerRef, OnInit, OnChanges } from "@angular/core";
+import { Directive, Input, ViewRef, TemplateRef, ViewContainerRef, OnInit, OnChanges, HostBinding } from "@angular/core";
 import { WizardService } from "./wizard.service";
 
 @Directive({
   selector: "[appScrollWizardStep]"
 })
 export class ScrollWizardStepDirective implements OnInit {
+   
   private hasView = false;
   public active: boolean;
   public stepIndex: number;
   private stepViewRef: ViewRef;
-
-  constructor(private wizardService: WizardService, private templateRef: TemplateRef<any>,private viewContainer: ViewContainerRef) {}
-
+  
+  constructor(private wizardService: WizardService, 
+  private templateRef: TemplateRef<any>,
+  private viewContainer: ViewContainerRef) {}
+  @HostBinding('class.scroll-step') scrollStel = true;
   onNavigationStreamChange(navEvent) {
     // this is the API for our steps. Methods / properties on this context can be called from the implementing template
     const context = {

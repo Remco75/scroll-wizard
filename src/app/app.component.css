@@ -2,6 +2,6 @@ p {
   font-family: Lato;
 }
 
-[appScrollWizardStep] {
+.scroll-step {
   margin-top: 10px;
 }
