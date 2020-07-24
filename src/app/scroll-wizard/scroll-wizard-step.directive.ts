@@ -1,5 +1,5 @@
 import { Directive, Input, ViewRef, TemplateRef, ViewContainerRef, OnInit, OnChanges } from "@angular/core";
-import { WizardService } from "../wizard.service";
+import { WizardService } from "./wizard.service";
 
 @Directive({
   selector: "[appScrollWizardStep]"
