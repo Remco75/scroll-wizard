@@ -6,7 +6,7 @@
   (genderSelected)="ctrl.resetFromHere((i+1));" class="step"></app-stepone>
   
   <app-steptwo *appScrollWizardStep="let ctrl=stepCtrl" (done)="ctrl.goNext()" 
-    (somethingChangedSoResetLaterSteps)="ctrl.resetFromHere(4, false)"
+    (somethingChangedSoResetLaterSteps)="ctrl.resetFromHere(4)"
   class="step"> </app-steptwo>
 
 	<app-my-fancy-component *appScrollWizardStep="let ctrl=stepCtrl" 

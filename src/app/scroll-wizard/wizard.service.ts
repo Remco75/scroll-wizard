@@ -32,18 +32,13 @@ export class WizardService {
     this.navigate(--this.activeIndex);
   }
 
-  gotoStep(index:number) {
-    this.activeIndex = index;
-    this.navigate(index);
-  }
 
  
-  resetFromStep(stepIndex: number, navigateToStep = true) {
+  resetFromStep(stepIndex: number) {
     this.removeStepsSubject.next(stepIndex);
-    if(navigateToStep) {
-      this.activeIndex = stepIndex;
-      this.navigate(stepIndex);
-    } 
+    this.activeIndex = stepIndex;
+    this.navigate(stepIndex);
+    
   }
 
   private navigate(newIndex) {

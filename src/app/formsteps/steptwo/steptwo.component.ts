@@ -20,8 +20,4 @@ export class SteptwoComponent implements OnInit {
   onReasonDone() {
     this.done.emit();
   }
-
-  resetLaterStep() {
-    
-  }
 }

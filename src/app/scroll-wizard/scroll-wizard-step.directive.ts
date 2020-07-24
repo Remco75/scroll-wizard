@@ -22,18 +22,14 @@ export class ScrollWizardStepDirective implements OnInit {
       // this is the API for our steps. Methods / properties on this context can be called from the implementing template
       const context = {
         stepCtrl: {
-          resetFromHere: (stepIndex = this.stepIndex, navigate=true) => this.wizardService.resetFromStep(stepIndex, navigate),
-          goNext: () => this.wizardService.gotoStep(this.stepIndex + 1)
+          resetFromHere: (stepIndex = this.stepIndex) => this.wizardService.resetFromStep(stepIndex),
+          goNext: () => this.wizardService.gotoNextStep()
         },
         index: this.stepIndex
       };
       this.stepViewRef = this.viewContainer.createEmbeddedView(this.templateRef, context);
-      if (!this.hasView) {
-
-        this.hasView = true;
-        
-        this.viewContainer.insert(this.stepViewRef);
-      }
+      this.hasView = true;
+      this.viewContainer.insert(this.stepViewRef);
     }
   }
 
