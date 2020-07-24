@@ -23,13 +23,17 @@ export class ScrollWizardStepDirective implements OnInit {
       const context = {
         stepCtrl: {
           resetFromHere: (stepIndex = this.stepIndex, navigate=true) => this.wizardService.resetFromStep(stepIndex, navigate),
-          goNext: () => this.wizardService.gotoNextStep()
+          goNext: () => this.wizardService.gotoStep(this.stepIndex + 1)
         },
         index: this.stepIndex
       };
       this.stepViewRef = this.viewContainer.createEmbeddedView(this.templateRef, context);
-      this.hasView = true;
-      this.viewContainer.insert(this.stepViewRef);
+      if (!this.hasView) {
+
+        this.hasView = true;
+        
+        this.viewContainer.insert(this.stepViewRef);
+      }
     }
   }
 
