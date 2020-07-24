@@ -4,15 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
-import { ScrollWizardStepDirective } from './scroll-wizard/scroll-wizard-step.directive';
 import {ScrollWizardComponent} from './scroll-wizard/scroll-wizard.component';
-import { WizardService } from './wizard.service';
-import { MyFancyComponentComponent } from './my-fancy-component/my-fancy-component.component';
+import { ScrollWizardStepDirective } from './scroll-wizard/scroll-wizard-step.directive';
+import { MyFancyComponentComponent } from './formsteps/my-fancy-component/my-fancy-component.component';
+import { SteponeComponent } from './formsteps/stepone/stepone.component';
+import { SteptwoComponent } from './formsteps/steptwo/steptwo.component';
+import { HelloComponent } from './formsteps/hello/hello.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, CommonModule ],
-  declarations: [ AppComponent,ScrollWizardStepDirective,  HelloComponent, ScrollWizardComponent, MyFancyComponentComponent ],
+  declarations: [ AppComponent,ScrollWizardStepDirective,  HelloComponent, ScrollWizardComponent, MyFancyComponentComponent, SteponeComponent, SteptwoComponent ],
   bootstrap:    [ AppComponent ],
   exports: [ AppComponent, ScrollWizardStepDirective, HelloComponent, ScrollWizardComponent ],
 })

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
-import { ScrollWizardStepDirective } from "./scroll-wizard/scroll-wizard-step.directive";
+import { ScrollWizardStepDirective } from "./scroll-wizard-step.directive";
 
 export interface WizardNavigationEvent {
   activeStepIndex: number;

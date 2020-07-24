@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, Input, Output, ContentChildren, QueryList, EventEmitter, ElementRef } from '@angular/core';
-import { WizardService } from '../wizard.service';
+import { WizardService } from './wizard.service';
 import {ScrollWizardStepDirective} from './scroll-wizard-step.directive';
 @Component({
   selector: 'app-scroll-wizard',
